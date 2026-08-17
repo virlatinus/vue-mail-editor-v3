@@ -6,16 +6,16 @@ persistence/actions to your backend.
 
 📖 **Documentation:** **[csesumonpro.github.io/vue-mail-editor](https://csesumonpro.github.io/vue-mail-editor/)**
 — guides, API reference, and a live interactive demo. You can also run the docs
-locally with `npm run docs:dev` (the `docs/` directory is a
+locally with `pnpm run docs:dev` (the `docs/` directory is a
 [VitePress](https://vitepress.dev) site).
 
 ```bash
-npm install vue-mail-editor
+pnpm install vue-mail-editor
 ```
 
 ```ts
 // peer dependency
-npm install vue
+pnpm install vue
 ```
 
 ## Quick start
@@ -334,7 +334,10 @@ With `#header` you own the markup, so wire every action through the
 
 ## August 17, 2026 Update
 
-- Tiptap has been updated to version 3
+- Migrated package manager from `npm` to `pnpm`.
+- Updated Tiptap dependencies to version 3.
+- Resolved TypeScript typing constraints for the new Tiptap V3 generics.
+- Restored visual layout parity and fixed VitePress Tailwind CSS extraction for the dev documentation server.
 
 ## License
 
