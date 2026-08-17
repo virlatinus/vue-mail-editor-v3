@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { withBase } from 'vitepress'
 import { REPO } from '../links'
 
-const cmd = 'npm i vue-mail-editor'
+const cmd = 'npm i vue-mail-editor-v3'
 const copied = ref(false)
 
 function copy() {

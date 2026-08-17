@@ -4,15 +4,15 @@ import { fileURLToPath, URL } from 'node:url'
 import { REPO, NPM } from './theme/links'
 
 // GitHub Pages base path.
-//  - Project page (default here): '/vue-mail-editor/'
+//  - Project page (default here): '/vue-mail-editor-v3/'
 //  - User/org page OR a custom domain (add docs/public/CNAME): '/'
-const BASE = '/vue-mail-editor/'
+const BASE = '/vue-mail-editor-v3/'
 
 // Absolute origin + base of the deployed site. Used for the sitemap and the
 // per-page <link rel="canonical"> tags. Update the origin if you move to a
 // custom domain (and set BASE to '/').
 const ORIGIN = 'https://csesumonpro.github.io'
-const SITE_URL = `${ORIGIN}${BASE}` // https://csesumonpro.github.io/vue-mail-editor/
+const SITE_URL = `${ORIGIN}${BASE}` // https://csesumonpro.github.io/vue-mail-editor-v3/
 
 export default defineConfig({
   base: BASE,
@@ -99,11 +99,11 @@ export default defineConfig({
           replacement: fileURLToPath(new URL('../../src', import.meta.url)),
         },
         {
-          find: 'vue-mail-editor/style.css',
+          find: 'vue-mail-editor-v3/style.css',
           replacement: fileURLToPath(new URL('../../src/style.css', import.meta.url)),
         },
         {
-          find: 'vue-mail-editor',
+          find: 'vue-mail-editor-v3',
           replacement: fileURLToPath(new URL('../../src/index.ts', import.meta.url)),
         },
       ],

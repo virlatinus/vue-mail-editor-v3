@@ -40,7 +40,7 @@ engine replaces them with real values at send time. Prefer double braces
 ::: code-group
 
 ```ts [TS]
-import type { EditorApi } from 'vue-mail-editor'
+import type { EditorApi } from 'vue-mail-editor-v3'
 
 const api = /* from @ready or a template ref */ ({} as EditorApi)
 
@@ -72,7 +72,7 @@ Seed variables into new designs via `config.variables`:
 ::: code-group
 
 ```ts [TS]
-import type { EditorConfig } from 'vue-mail-editor'
+import type { EditorConfig } from 'vue-mail-editor-v3'
 
 const config: EditorConfig = {
   variables: [

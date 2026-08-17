@@ -1,17 +1,17 @@
 {
-  "name": "vue-mail-editor",
+  "name": "vue-mail-editor-v3",
   "version": "1.3.0",
   "type": "module",
   "description": "A customizable, extensible drag-and-drop email template editor for Vue 3.",
   "license": "MIT",
   "author": "csesumonpro <hello@cleancodewithsumon.com>",
-  "homepage": "https://csesumonpro.github.io/vue-mail-editor/",
+  "homepage": "https://csesumonpro.github.io/vue-mail-editor-v3/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/csesumonpro/vue-mail-editor.git"
+    "url": "git+https://github.com/csesumonpro/vue-mail-editor-v3.git"
   },
   "bugs": {
-    "url": "https://github.com/csesumonpro/vue-mail-editor/issues"
+    "url": "https://github.com/csesumonpro/vue-mail-editor-v3/issues"
   },
   "keywords": [
     "vue",
@@ -29,13 +29,13 @@
     "dist",
     "LICENSE"
   ],
-  "main": "./dist/vue-mail-editor.js",
-  "module": "./dist/vue-mail-editor.js",
+  "main": "./dist/vue-mail-editor-v3.js",
+  "module": "./dist/vue-mail-editor-v3.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/vue-mail-editor.js"
+      "import": "./dist/vue-mail-editor-v3.js"
     },
     "./style.css": "./dist/style.css"
   },

@@ -1,6 +1,6 @@
 ---
 title: Changelog
-description: Release notes and version history for vue-mail-editor.
+description: Release notes and version history for vue-mail-editor-v3.
 ---
 
 <!-- v-pre stops Vue from interpreting merge-token examples like {{name}} in the

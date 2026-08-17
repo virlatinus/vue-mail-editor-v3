@@ -36,7 +36,7 @@ export default defineConfig({
       entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
       name: 'VueEmailEditor',
       formats: ['es'],
-      fileName: () => 'vue-mail-editor.js',
+      fileName: () => 'vue-mail-editor-v3.js',
     },
     rollupOptions: {
       external: ['vue'],

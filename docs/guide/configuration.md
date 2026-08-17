@@ -6,7 +6,7 @@ actions, set the default content width, and provide starter templates.
 ::: code-group
 
 ```ts [TS]
-import type { EditorConfig } from 'vue-mail-editor'
+import type { EditorConfig } from 'vue-mail-editor-v3'
 
 const config: EditorConfig = {
   contentWidth: 640,
@@ -144,7 +144,7 @@ your fields (like the `<style>` below) or they'll render bare.
 ```vue
 <script setup>
 import { ref, onMounted } from 'vue'
-import { EmailEditor } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
 
 const design = ref()
 // Your verified senders — loaded from your backend (dynamic data).

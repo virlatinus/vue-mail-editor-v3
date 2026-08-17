@@ -1,5 +1,5 @@
 /**
- * Public entry for vue-mail-editor.
+ * Public entry for vue-mail-editor-v3.
  * (The public API surface grows across phases P3–P8.)
  */
 import './style.css'
