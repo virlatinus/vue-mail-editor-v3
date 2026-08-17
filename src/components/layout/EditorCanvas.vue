@@ -80,8 +80,8 @@ function fitFrame() {
   }
   measure()
   ro?.disconnect()
-  ro = new win.ResizeObserver(measure)
-  ro.observe(doc.documentElement)
+  ro = new (win as any).ResizeObserver(measure)
+  ro?.observe(doc.documentElement)
 }
 
 // Device switch changes the iframe width without reloading srcdoc — re-measure.

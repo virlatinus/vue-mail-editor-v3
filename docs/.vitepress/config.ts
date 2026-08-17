@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath, URL } from 'node:url'
 import { REPO, NPM } from './theme/links'
 
@@ -90,19 +91,20 @@ export default defineConfig({
   },
 
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
-      // The live demo imports the BUILT library (dist) — its CSS already has
-      // Tailwind compiled, which the docs Vite build can't do from src.
-      // Run `npm run build` before `npm run docs:dev` / `docs:build`.
-      // (More specific /style.css alias must come first.)
       alias: [
         {
+          find: '@',
+          replacement: fileURLToPath(new URL('../../src', import.meta.url)),
+        },
+        {
           find: 'vue-mail-editor/style.css',
-          replacement: fileURLToPath(new URL('../../dist/style.css', import.meta.url)),
+          replacement: fileURLToPath(new URL('../../src/style.css', import.meta.url)),
         },
         {
           find: 'vue-mail-editor',
-          replacement: fileURLToPath(new URL('../../dist/vue-mail-editor.js', import.meta.url)),
+          replacement: fileURLToPath(new URL('../../src/index.ts', import.meta.url)),
         },
       ],
     },

@@ -37,7 +37,7 @@ import {
 } from './export'
 
 /** Built-in blocks, authored through the public `defineBlock` API. */
-export const BUILTIN_BLOCKS: AnyBlockDefinition[] = [
+export const BUILTIN_BLOCKS = [
   defineBlock({
     type: 'heading',
     label: 'Heading',
@@ -128,4 +128,4 @@ export const BUILTIN_BLOCKS: AnyBlockDefinition[] = [
     inspector: blockInspectors.html,
     toHtml: htmlToHtml,
   }),
-]
+] as AnyBlockDefinition[]

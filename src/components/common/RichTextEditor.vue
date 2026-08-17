@@ -3,10 +3,8 @@ import { ref, computed, watch, inject, onMounted, onBeforeUnmount, nextTick } fr
 import { useEditor, EditorContent } from '@tiptap/vue-3'
 import type { Extensions } from '@tiptap/core'
 import StarterKit from '@tiptap/starter-kit'
-import Underline from '@tiptap/extension-underline'
-import TextStyle from '@tiptap/extension-text-style'
-import Color from '@tiptap/extension-color'
-import Placeholder from '@tiptap/extension-placeholder'
+import { TextStyle, Color } from '@tiptap/extension-text-style'
+import { Placeholder } from '@tiptap/extensions'
 import { LinkMark } from './LinkMark'
 import { VariableNode, type VariableEditRequest } from './VariableNode'
 import VariablePopover from './VariablePopover.vue'
@@ -55,8 +53,7 @@ const locked = variables.locked
 const config = useConfig()
 
 const extensions: Extensions = [
-  StarterKit.configure({ heading: false }),
-  Underline,
+  StarterKit.configure({ heading: false, link: false }),
   LinkMark,
   TextStyle,
   Color,
@@ -345,7 +342,7 @@ watch(
   () => props.modelValue,
   (val) => {
     if (editor.value && val !== editor.value.getHTML()) {
-      editor.value.commands.setContent(val, false)
+      editor.value.commands.setContent(val, { emitUpdate: false })
     }
   },
 )
