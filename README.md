@@ -332,6 +332,11 @@ With `#header` you own the markup, so wire every action through the
 - Predefined social icons load from the Simple Icons CDN (SVG); for maximum
   client compatibility (e.g. Outlook) supply a custom PNG icon URL per item.
 
+## August 17, 2026 Update
+
+- Tiptap has been updated to version 3
+
 ## License
 
 MIT
+
