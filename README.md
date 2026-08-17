@@ -4,7 +4,7 @@ A customizable, extensible drag-and-drop **email template editor** for Vue 3.
 Theme it, register your own blocks and inspector panels, and delegate all
 persistence/actions to your backend.
 
-This version is based on [https://github.com/csesumonpro/vue-email-editor](csesumonpro vue-email-editor)
+This version is based on [csesumonpro/vue-email-editor](https://github.com/csesumonpro/vue-email-editor)
 and has been updated to use Tiptap V3 dependencies and `pnpm`.
 
 📖 **Documentation:** **[csesumonpro.github.io/vue-mail-editor](https://csesumonpro.github.io/vue-mail-editor/)**
