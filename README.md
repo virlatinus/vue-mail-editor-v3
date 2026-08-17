@@ -1,21 +1,21 @@
-# vue-mail-editor
+# vue-mail-editor-v3
 
 A customizable, extensible drag-and-drop **email template editor** for Vue 3.
 Theme it, register your own blocks and inspector panels, and delegate all
 persistence/actions to your backend.
 
-📖 **Documentation:** **[csesumonpro.github.io/vue-mail-editor](https://csesumonpro.github.io/vue-mail-editor/)**
+📖 **Documentation:** **[csesumonpro.github.io/vue-mail-editor-v3](https://csesumonpro.github.io/vue-mail-editor-v3/)**
 — guides, API reference, and a live interactive demo. You can also run the docs
-locally with `npm run docs:dev` (the `docs/` directory is a
+locally with `pnpm run docs:dev` (the `docs/` directory is a
 [VitePress](https://vitepress.dev) site).
 
 ```bash
-npm install vue-mail-editor
+pnpm install vue-mail-editor-v3
 ```
 
 ```ts
 // peer dependency
-npm install vue
+pnpm install vue
 ```
 
 ## Quick start
@@ -23,9 +23,9 @@ npm install vue
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { EmailEditor } from 'vue-mail-editor'
-import 'vue-mail-editor/style.css'
-import type { Design } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
+import 'vue-mail-editor-v3/style.css'
+import type { Design } from 'vue-mail-editor-v3'
 
 const design = ref<Design>()
 </script>
@@ -103,7 +103,7 @@ defineEmits<{ update: [patch: Partial<{ stars: number; color: string }>] }>()
 ```
 
 ```ts
-import { defineBlock } from 'vue-mail-editor'
+import { defineBlock } from 'vue-mail-editor-v3'
 import { Star } from 'lucide-vue-next'
 import RatingBlock from './RatingBlock.vue'
 
@@ -152,7 +152,7 @@ You can also override `--cvee-*` CSS variables on a `.vue-email-editor` wrapper.
 
 ```vue
 <script setup lang="ts">
-import { EmailEditor } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
 
 async function load()        { return (await api.get('/designs/1')).data }
 async function save(design)  { await api.put('/designs/1', design) }
@@ -202,7 +202,7 @@ For continuous save-to-database, debounce the `change` event yourself:
 ```vue
 <script setup lang="ts">
 import { debounce } from 'lodash-es'
-import type { Design } from 'vue-mail-editor'
+import type { Design } from 'vue-mail-editor-v3'
 
 async function load() { return (await api.get('/designs/1')).data.design }
 
@@ -294,8 +294,8 @@ Your buttons render next to the built-ins; wire them via the imperative API:
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { EmailEditor } from 'vue-mail-editor'
-import type { EditorApi } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
+import type { EditorApi } from 'vue-mail-editor-v3'
 const api = ref<EditorApi>()
 function publish() { myBackend.publish(api.value!.exportHtml()) }
 </script>
@@ -334,7 +334,10 @@ With `#header` you own the markup, so wire every action through the
 
 ## August 17, 2026 Update
 
-- Tiptap has been updated to version 3
+- Migrated package manager from `npm` to `pnpm`.
+- Updated Tiptap dependencies to version 3.
+- Resolved TypeScript typing constraints for the new Tiptap V3 generics.
+- Restored visual layout parity and fixed VitePress Tailwind CSS extraction for the dev documentation server.
 
 ## License
 

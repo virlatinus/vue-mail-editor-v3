@@ -1,5 +1,4 @@
 import type { Component } from 'vue'
-import type { Content } from '@/types/schema'
 import type {
   AccordionGroup,
   ControlDef,
@@ -32,7 +31,7 @@ export type InspectorGroup = AccordionGroup
  *   props:  { values: V; selected: boolean; editing: boolean }
  *   emits:  (e: 'update', patch: Partial<V>)
  */
-export interface BlockDefinition<V = Record<string, unknown>> {
+export interface BlockDefinition<V = any> {
   /** Unique block type key. */
   type: string
   /** Display name (palette tooltip + inspector title). */

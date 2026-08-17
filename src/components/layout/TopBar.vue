@@ -47,22 +47,8 @@ const devices = computed(() =>
 )
 
 // Action groups (separated by dividers). A divider renders only when the group
-// it precedes AND some earlier group both have at least one visible action, so
-// disabling a whole group never leaves an orphaned or doubled-up separator.
-const hasView = computed(
-  () => config.actions.undo || config.actions.preview || config.actions.theme,
-)
-const hasDesign = computed(
-  () => config.actions.templates || config.actions.new || config.actions.import,
-)
-const hasSave = computed(
-  () => config.actions.saveTemplate || config.actions.save || config.actions.export,
-)
-const sepBeforeDesign = computed(() => hasView.value && hasDesign.value)
-const sepBeforeSave = computed(() => (hasView.value || hasDesign.value) && hasSave.value)
-const sepBeforeFullscreen = computed(
-  () => (hasView.value || hasDesign.value || hasSave.value) && config.actions.fullscreen,
-)
+
+
 
 function onNew() {
   if (confirm('Start a new design? Unsaved changes will be lost.')) {

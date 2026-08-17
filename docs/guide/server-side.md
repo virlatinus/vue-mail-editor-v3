@@ -101,8 +101,8 @@ The `Design` JSON you saved is exactly what you load back. Two ways:
 ```vue [v-model]
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { EmailEditor } from 'vue-mail-editor'
-import type { Design } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
+import type { Design } from 'vue-mail-editor-v3'
 
 const design = ref<Design>()
 
@@ -120,8 +120,8 @@ onMounted(async () => {
 
 ```vue [onLoad hook]
 <script setup lang="ts">
-import { EmailEditor } from 'vue-mail-editor'
-import type { Design } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
+import type { Design } from 'vue-mail-editor-v3'
 
 // The editor calls this on mount and renders what you return.
 async function load(): Promise<Design> {
@@ -154,8 +154,8 @@ the editor renders exactly where they left off → on save you receive the updat
 ```vue [TS]
 <script setup lang="ts">
 import { ref } from 'vue'
-import { EmailEditor } from 'vue-mail-editor'
-import type { Design, EditorApi, TemplatePayload } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
+import type { Design, EditorApi, TemplatePayload } from 'vue-mail-editor-v3'
 
 const api = ref<EditorApi>()
 
@@ -192,7 +192,7 @@ async function saveTemplate({ name, design }: TemplatePayload) {
 ```vue [JS]
 <script setup>
 import { ref } from 'vue'
-import { EmailEditor } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
 
 const api = ref()
 
@@ -240,8 +240,8 @@ and pass them as `config.templates` (this **replaces** the built-in gallery):
 ```vue [TS]
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { EmailEditor } from 'vue-mail-editor'
-import type { EditorConfig, TemplateDef, Design } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
+import type { EditorConfig, TemplateDef, Design } from 'vue-mail-editor-v3'
 
 // Whatever GET /api/templates → [{ id, name, design }] returns.
 const saved = ref<{ id: string; name: string; design: Design }[]>([])
@@ -273,7 +273,7 @@ const config = computed<EditorConfig>(() => ({
 ```vue [JS]
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { EmailEditor } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
 
 const saved = ref([])
 onMounted(async () => {
@@ -320,8 +320,8 @@ batch DB writes:
 ```vue [TS]
 <script setup lang="ts">
 import { debounce } from 'lodash-es'
-import { EmailEditor } from 'vue-mail-editor'
-import type { Design } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
+import type { Design } from 'vue-mail-editor-v3'
 
 // your real-DB "autosaveMs" — tune freely
 const autosave = debounce((design: Design) => {
@@ -341,7 +341,7 @@ const autosave = debounce((design: Design) => {
 ```vue [JS]
 <script setup>
 import { debounce } from 'lodash-es'
-import { EmailEditor } from 'vue-mail-editor'
+import { EmailEditor } from 'vue-mail-editor-v3'
 
 const autosave = debounce((design) => {
   fetch(`/api/emails/${id}`, {

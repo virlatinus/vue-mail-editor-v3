@@ -1,17 +1,18 @@
 import { defineConfig } from 'vitepress'
+import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath, URL } from 'node:url'
 import { REPO, NPM } from './theme/links'
 
 // GitHub Pages base path.
-//  - Project page (default here): '/vue-mail-editor/'
+//  - Project page (default here): '/vue-mail-editor-v3/'
 //  - User/org page OR a custom domain (add docs/public/CNAME): '/'
-const BASE = '/vue-mail-editor/'
+const BASE = '/vue-mail-editor-v3/'
 
 // Absolute origin + base of the deployed site. Used for the sitemap and the
 // per-page <link rel="canonical"> tags. Update the origin if you move to a
 // custom domain (and set BASE to '/').
 const ORIGIN = 'https://csesumonpro.github.io'
-const SITE_URL = `${ORIGIN}${BASE}` // https://csesumonpro.github.io/vue-mail-editor/
+const SITE_URL = `${ORIGIN}${BASE}` // https://csesumonpro.github.io/vue-mail-editor-v3/
 
 export default defineConfig({
   base: BASE,
@@ -90,19 +91,20 @@ export default defineConfig({
   },
 
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
-      // The live demo imports the BUILT library (dist) — its CSS already has
-      // Tailwind compiled, which the docs Vite build can't do from src.
-      // Run `npm run build` before `npm run docs:dev` / `docs:build`.
-      // (More specific /style.css alias must come first.)
       alias: [
         {
-          find: 'vue-mail-editor/style.css',
-          replacement: fileURLToPath(new URL('../../dist/style.css', import.meta.url)),
+          find: '@',
+          replacement: fileURLToPath(new URL('../../src', import.meta.url)),
         },
         {
-          find: 'vue-mail-editor',
-          replacement: fileURLToPath(new URL('../../dist/vue-mail-editor.js', import.meta.url)),
+          find: 'vue-mail-editor-v3/style.css',
+          replacement: fileURLToPath(new URL('../../src/style.css', import.meta.url)),
+        },
+        {
+          find: 'vue-mail-editor-v3',
+          replacement: fileURLToPath(new URL('../../src/index.ts', import.meta.url)),
         },
       ],
     },

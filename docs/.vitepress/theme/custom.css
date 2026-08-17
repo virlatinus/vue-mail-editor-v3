@@ -2,6 +2,7 @@
 /* Vue Email Editor — docs theme polish                                 */
 /* Neutral black/white identity, matching the editor's default palette. */
 /* ------------------------------------------------------------------ */
+@source "../../src";
 
 :root {
   /* Brand = near-black (the editor's light-mode accent) */

@@ -3,9 +3,9 @@
 // BUILT library so its Tailwind-compiled CSS comes along. The active tab is
 // owned by LiveDemo and passed in; this component renders the two demos.
 import { ref } from 'vue'
-import { EmailEditor, TextEditor, TEMPLATES } from 'vue-mail-editor'
-import type { DesignVariable } from 'vue-mail-editor'
-import 'vue-mail-editor/style.css'
+import { EmailEditor, TextEditor, TEMPLATES } from 'vue-mail-editor-v3'
+import type { DesignVariable } from 'vue-mail-editor-v3'
+import 'vue-mail-editor-v3/style.css'
 
 defineProps<{ tab: 'email' | 'text' }>()
 

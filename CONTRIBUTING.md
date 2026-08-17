@@ -1,12 +1,12 @@
-# Contributing to vue-mail-editor
+# Contributing to vue-mail-editor-v3
 
 First off — thank you for taking the time to contribute! 🎉
 
-`vue-mail-editor` is a drag-and-drop email template editor for Vue 3. This guide
+`vue-mail-editor-v3` is a drag-and-drop email template editor for Vue 3. This guide
 covers how to set up the project, make changes, and open a pull request.
 
-- 📖 Docs: <https://csesumonpro.github.io/vue-mail-editor/>
-- 🐛 Issues: <https://github.com/csesumonpro/vue-mail-editor/issues>
+- 📖 Docs: <https://csesumonpro.github.io/vue-mail-editor-v3/>
+- 🐛 Issues: <https://github.com/csesumonpro/vue-mail-editor-v3/issues>
 
 ## Ways to contribute
 
@@ -30,8 +30,8 @@ covers how to set up the project, make changes, and open a pull request.
 1. **Fork** the repository and **clone** your fork:
 
    ```bash
-   git clone https://github.com/<your-username>/vue-mail-editor.git
-   cd vue-mail-editor
+   git clone https://github.com/<your-username>/vue-mail-editor-v3.git
+   cd vue-mail-editor-v3
    ```
 
 2. **Install dependencies:**

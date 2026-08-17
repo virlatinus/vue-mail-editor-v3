@@ -12,7 +12,20 @@ import { Mark, mergeAttributes } from '@tiptap/core'
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     link: {
-      setLink: (attributes: { href: string; target?: string | null }) => ReturnType
+      setLink: (attributes: {
+        href: string
+        target?: string | null
+        rel?: string | null
+        class?: string | null
+        title?: string | null
+      }) => ReturnType
+      toggleLink: (attributes?: {
+        href: string
+        target?: string | null
+        rel?: string | null
+        class?: string | null
+        title?: string | null
+      }) => ReturnType
       unsetLink: () => ReturnType
     }
   }
@@ -55,6 +68,10 @@ export const LinkMark = Mark.create({
         (attributes) =>
         ({ chain }) =>
           chain().setMark(this.name, attributes).run(),
+      toggleLink:
+        (attributes) =>
+        ({ chain }) =>
+          chain().toggleMark(this.name, attributes, { extendEmptyMarkRange: true }).run(),
       unsetLink:
         () =>
         ({ chain }) =>

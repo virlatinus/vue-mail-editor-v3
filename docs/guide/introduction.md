@@ -1,6 +1,6 @@
 # What is Vue Email Editor?
 
-`vue-mail-editor` is a customizable, extensible drag-and-drop
+`vue-mail-editor-v3` is a customizable, extensible drag-and-drop
 **email template editor** for Vue 3. It gives your users a visual canvas to build
 responsive emails out of rows, columns, and content blocks — and gives you, the
 developer, full control over theming, available blocks, the inspector panel, and

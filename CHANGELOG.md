@@ -113,7 +113,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial public release of **vue-mail-editor** — a customizable, extensible
+- Initial public release of **vue-mail-editor-v3** — a customizable, extensible
   drag-and-drop email template editor for Vue 3.
 - Drag-and-drop canvas with built-in blocks, inspector controls, theming,
   template variables, and HTML export.
@@ -122,11 +122,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   headers.
 - Documentation site with guides, API reference, and a live interactive demo.
 
-[Unreleased]: https://github.com/csesumonpro/vue-mail-editor/compare/v1.3.0...HEAD
-[1.3.0]: https://github.com/csesumonpro/vue-mail-editor/compare/v1.2.0...v1.3.0
-[1.2.0]: https://github.com/csesumonpro/vue-mail-editor/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/csesumonpro/vue-mail-editor/compare/v1.0.3...v1.1.0
-[1.0.3]: https://github.com/csesumonpro/vue-mail-editor/compare/v1.0.2...v1.0.3
-[1.0.2]: https://github.com/csesumonpro/vue-mail-editor/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/csesumonpro/vue-mail-editor/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/csesumonpro/vue-mail-editor/releases/tag/v1.0.0
+[Unreleased]: https://github.com/csesumonpro/vue-mail-editor-v3/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/csesumonpro/vue-mail-editor-v3/compare/v1.2.0...v1.3.0
+[1.2.0]: https://github.com/csesumonpro/vue-mail-editor-v3/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/csesumonpro/vue-mail-editor-v3/compare/v1.0.3...v1.1.0
+[1.0.3]: https://github.com/csesumonpro/vue-mail-editor-v3/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/csesumonpro/vue-mail-editor-v3/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/csesumonpro/vue-mail-editor-v3/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/csesumonpro/vue-mail-editor-v3/releases/tag/v1.0.0

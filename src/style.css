@@ -7,6 +7,7 @@
    doesn't.) Consumers customize via the `theme` prop / `--cvee-*` variables
    (token values), not by overriding utility declarations. */
 @import 'tailwindcss' important;
+@source ".";
 
 /* Dark mode is driven by a `.dark` class on <html>. */
 @custom-variant dark (&:where(.dark, .dark *));
