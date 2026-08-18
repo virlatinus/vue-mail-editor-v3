@@ -20,13 +20,9 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
-          cache: npm
-      # Trusted Publishing (OIDC) needs npm >= 11.5.1; node 20 ships an older npm.
-      # Pinned to the 11.x line on purpose: `npm@latest` is now 12.x, which
-      # requires node >= 22.22 and fails to install here.
-      - run: npm install -g npm@^11.5.1
-      - run: npm ci
-      - run: npm run build
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
       # Fail fast if the pushed tag doesn't match the version in package.json.
       - name: Verify tag matches package.json version
         run: |
@@ -38,7 +34,7 @@ jobs:
           fi
       # No NODE_AUTH_TOKEN: auth comes from OIDC (Trusted Publishing).
       # Provenance is attached automatically.
-      - run: npm publish
+      - run: pnpm publish --provenance --no-git-checks
 
       # Publish a GitHub Release using the matching CHANGELOG.md section as the
       # notes. Falls back to GitHub's auto-generated notes if no section exists.
