@@ -25,12 +25,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
+          cache: pnpm
       # The live-editor demo imports the built library (dist), so build it first.
-      - run: npm run build
+      - run: pnpm run build
       - uses: actions/configure-pages@v5
-      - run: npm run docs:build
+      - run: pnpm run docs:build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
