@@ -7,7 +7,7 @@ persistence/actions to your backend.
 This version is based on [csesumonpro/vue-mail-editor](https://github.com/csesumonpro/vue-mail-editor)
 and has been updated to use Tiptap V3 dependencies and `pnpm`.
 
-📖 **Documentation:** **[csesumonpro.github.io/vue-mail-editor](https://csesumonpro.github.io/vue-mail-editor/)**
+📖 **Documentation:** **[virlatinus.github.io/vue-mail-editor-v3](https://virlatinus.github.io/vue-mail-editor-v3/)**
 — guides, API reference, and a live interactive demo. You can also run the docs
 locally with `pnpm run docs:dev` (the `docs/` directory is a
 [VitePress](https://vitepress.dev) site).
