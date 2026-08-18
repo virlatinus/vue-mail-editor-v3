@@ -5,12 +5,23 @@
    NORMAL host rule regardless of specificity. (Rules that themselves use
    !important still can't be beaten without Shadow DOM, but WordPress's form CSS
    doesn't.) Consumers customize via the `theme` prop / `--cvee-*` variables
-   (token values), not by overriding utility declarations. */
-@import 'tailwindcss' important;
-@source ".";
+   (token values), not by overriding utility declarations.
 
-/* Dark mode is driven by a `.dark` class on <html>. */
+   `@scope` to `.vue-email-editor` (the editor's root, see EmailEditor.vue) so
+   these !important utilities can only ever match inside our own tree. Without
+   this, `!important` bypasses the host's cascade layers/specificity entirely,
+   so a host page element sharing a utility class name with us (e.g. its own
+   `.hidden`, `.bg-primary`) loses to ours unconditionally the instant this
+   stylesheet loads -- scoping closes that hole while keeping the hardening.
+   `[data-cvee-portal]` extends the scope to content we render outside
+   `.vue-email-editor` (currently just the `v-tooltip` bubble, appended to
+   <body> by directives/tooltip.ts) so it can still use our utility classes. */
+@source ".";
 @custom-variant dark (&:where(.dark, .dark *));
+
+@scope (.vue-email-editor, [data-cvee-portal]) {
+  @import 'tailwindcss' important;
+}
 
 /* ------------------------------------------------------------------ */
 /* Design tokens — neutral black/white system (light)                 */

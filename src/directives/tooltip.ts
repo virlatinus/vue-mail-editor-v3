@@ -32,6 +32,9 @@ function show(el: TipEl) {
 
   tip = document.createElement('div')
   tip.className = 'app-tooltip'
+  // Extends the editor's `@scope` (style.css) to this <body>-portaled node,
+  // so it can still use our Tailwind utility classes if it ever needs to.
+  tip.setAttribute('data-cvee-portal', '')
   tip.textContent = text
   // The tooltip lives on <body>, outside the themed editor root, so copy the
   // resolved theme colors from the trigger element.
