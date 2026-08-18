@@ -15,12 +15,27 @@
    stylesheet loads -- scoping closes that hole while keeping the hardening.
    `[data-cvee-portal]` extends the scope to content we render outside
    `.vue-email-editor` (currently just the `v-tooltip` bubble, appended to
-   <body> by directives/tooltip.ts) so it can still use our utility classes. */
+   <body> by directives/tooltip.ts) so it can still use our utility classes.
+
+   Split into Tailwind's three sub-entry points instead of one plain
+   `@import 'tailwindcss'`: `theme.css` (the `--text-xs`, `--spacing-*`,
+   `--font-weight-*`, ... scale variables) MUST stay unscoped. Tailwind's
+   `@theme` compiles to a literal `:root, :host {...}` rule, and `:root`
+   is never a *descendant* of `.vue-email-editor` -- nested inside
+   `@scope`, that rule can never match, so every utility referencing a
+   theme variable via var() (nearly all of them) silently stops resolving
+   while only utilities backed by our own separately-declared `--cvee-*`
+   tokens keep working. `preflight.css` (base reset) and `utilities.css`
+   (the actual utility classes) are the parts that need scoping/hardening,
+   so only those two stay wrapped. */
 @source ".";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@import 'tailwindcss/theme.css' layer(theme);
+
 @scope (.vue-email-editor, [data-cvee-portal]) {
-  @import 'tailwindcss' important;
+  @import 'tailwindcss/preflight.css' layer(base) important;
+  @import 'tailwindcss/utilities.css' layer(utilities) important;
 }
 
 /* ------------------------------------------------------------------ */
